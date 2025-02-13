@@ -1,0 +1,20 @@
+{
+    "cSpell.words": [
+        "checkpw",
+        "datefmt",
+        "gensalt",
+        "hashpw",
+        "levelname",
+        "localtime",
+        "NOTSET",
+        "ondelete",
+        "pathsep",
+        "poolclass",
+        "qualname",
+        "sessionmaker",
+        "sqlalchemy",
+        "tzdata",
+        "venv",
+        "zoneinfo"
+    ]
+}

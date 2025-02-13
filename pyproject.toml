@@ -1,0 +1,32 @@
+[project]
+name = "todoist"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Sabarish Kannan",email = "Sabarish.Kannan@analog.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+package-mode = true
+dependencies = [
+    "fastapi (>=0.115.8,<0.116.0)",
+    "sqlalchemy (>=2.0.38,<3.0.0)",
+    "alembic (>=1.14.1,<2.0.0)",
+    "uvicorn (>=0.34.0,<0.35.0)",
+    "bcrypt (>=4.2.1,<5.0.0)",
+    "python-jose (>=3.3.0,<4.0.0)",
+    "python-multipart (>=0.0.20,<0.0.21)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.6"
+mypy = "^1.15.0"
+
+
+[tool.mypy]
+ignore_missing_imports = true
