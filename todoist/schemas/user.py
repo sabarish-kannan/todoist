@@ -14,3 +14,10 @@ class CurrentUser(UserResponse):
     """Current user schema."""
 
     user_id: int
+
+
+class UserUpdate(BaseModel):
+    """User update schema."""
+
+    username: str | None = None
+    email: str | None = None

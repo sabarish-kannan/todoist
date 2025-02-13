@@ -8,3 +8,11 @@ class TaskCreate(BaseModel):
 
     title: str
     description: str
+
+
+class TaskUpdate(BaseModel):
+    """Task update schema."""
+
+    title: str | None = None
+    description: str | None = None
+    completed: bool | None = None
