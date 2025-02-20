@@ -1,0 +1,47 @@
+services:
+  todoist:
+    image: todoist
+    container_name: todoist
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${TODOIST_PORT}:8000"
+    volumes:
+      - .:/usr/local/app
+    env_file:
+      - ./.env
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+    restart: always
+    networks:
+      - todoist-network
+
+  postgres_db:
+    image: "postgres:15.2"
+    container_name: postgres_db
+    env_file:
+      - ./.env    
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    restart: always
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "$DATABASE_USER", "-d", "$DATABASE_NAME"]
+      interval: 10s
+      retries: 10
+      start_period: 5s
+      timeout: 5s
+    ports:
+      - "5432:5432"
+    volumes:
+      - /tmp/postgresql:/var/lib/postgresql
+      - /tmp/postgresql/data:/var/lib/postgresql/data
+    networks:
+      - todoist-network
+
+
+networks: 
+  todoist-network:
+    name: todoist-network

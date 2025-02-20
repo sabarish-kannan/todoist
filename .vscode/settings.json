@@ -2,8 +2,11 @@
     "cSpell.words": [
         "checkpw",
         "datefmt",
+        "dotenv",
         "gensalt",
         "hashpw",
+        "healthcheck",
+        "isready",
         "levelname",
         "localtime",
         "NOTSET",
@@ -14,7 +17,9 @@
         "sessionmaker",
         "sqlalchemy",
         "tzdata",
+        "uvicorn",
         "venv",
+        "VIRTUALENVS",
         "zoneinfo"
     ]
 }
