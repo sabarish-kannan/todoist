@@ -16,4 +16,4 @@ app.include_router(task_router)
 if __name__ == "__main__":
     if TODOIST_HOST is None:
         raise ValueError("TODOIST_HOST is not set")
-    uvicorn.run("todoist.main:app", host=TODOIST_HOST, port=TODOIST_PORT)
+    uvicorn.run("todoist.main:app", host=TODOIST_HOST, port=TODOIST_PORT, reload=True)
